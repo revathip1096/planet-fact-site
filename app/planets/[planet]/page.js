@@ -1,47 +1,69 @@
 "use client"
-import React, { useState } from "react"; // Import the Tabs component
+import React from "react";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import Image from "next/image";
+import data from "../../../public/data";
+import Navbar from '../../../app/components/navbar'
 
-const Planet = () => {
+const Planet = ({ params }) => {
+  // Find the planet's data from the data array
+  console.log(params.planet)
+  
+  const planetData = data.find((planet) => planet.name === params.planet);
+
+  if (!planetData) {
+    return <div>Planet not found</div>;
+  }
+
   return (
+    <>
+    <Navbar />
+    
     <div className="py-20 px-20">
       <div className="flex">
         <div className="w-9/12 flex justify-center items-center">
           {/* Content for the left column */}
-          <img src="/assets/planet-mercury.svg" alt="Mercury" />
+          <img src={planetData.images.planet} alt={planetData.name} />
         </div>
         <div className="w-3/12 p-4 mt-20 mr-20">
           {/* Content for the right column */}
-          <h2 className="text-3xl font-semibold mb-4">MERCURY</h2>
-
-          {
-            "Mercury is the smallest planet in the Solar System and the closest to the Sun. Its orbit around the Sun takes 87.97 Earth days, the shortest of all the Sun's planets. Mercury is one of four terrestrial planets in the Solar System, and is a rocky body like Earth."
-          }
+          <h2 className="text-3xl font-semibold mb-4">{planetData.name}</h2>
+          {planetData.overview.content}
           <div className="flex text-l font-semibold mt-4">
             <h3 className=" ">Source:</h3>
             <div className="flex ">
               <a
-                href="https://en.wikipedia.org/wiki/Mercury_(planet)"
+                href={planetData.overview.source}
                 className="underline ml-2"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 Wikipedia
               </a>
               <FaExternalLinkSquareAlt className="mt-[4px] ml-2" />
             </div>
           </div>
-
-
-         {/* Render the Tabs component here */}
+          <div className="flex flex-col">
+          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-4 rounded-xl hover:bg-gray-400 mt-[40px]">
+            OVERVIEW
+          </button>
+          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-4 rounded-xl hover:bg-gray-400 mt-[10px]">
+            INTERNAL STRUCTURE
+          </button>
+          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-4 rounded-xl hover:bg-gray-400 mt-[10px]">
+            SURFACE GEOLOGY
+          </button>
+        </div>
         </div>
       </div>
       <div className="flex justify-center gap-10 mt-[50px]  ">
+        {/* Render other planet data here */}
         <span className="block max-w-sm p-8 px-[64px] border border-white-200">
           <h5 className="font-normal text-gray-700 dark:text-gray-400">
             ROTATION TIME
           </h5>
           <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            58.6 DAYS
+            {planetData.rotation}
           </p>
         </span>
         <span className="block max-w-sm p-8 px-[64px] border border-white-200">
@@ -49,13 +71,15 @@ const Planet = () => {
             REVOLUTION TIME
           </h5>
           <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            87.97 DAYS
+            {planetData.revolution}
           </p>
         </span>
         <span className="block max-w-sm p-8 px-[64px] border border-white-200">
-          <h5 className="font-normal text-gray-700 dark:text-gray-400">RADIUS</h5>
+          <h5 className="font-normal text-gray-700 dark:text-gray-400">
+            RADIUS
+          </h5>
           <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            2,439.7 KM
+            {planetData.radius}
           </p>
         </span>
         <span className="block max-w-sm p-8 px-[64px] border border-white-200">
@@ -63,11 +87,12 @@ const Planet = () => {
             AVERAGE TEMP.
           </h5>
           <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            430&deg;C
+            {planetData.temperature}
           </p>
         </span>
       </div>
     </div>
+    </>
   );
 };
 

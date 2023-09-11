@@ -16,14 +16,14 @@
                 "Mercury's surface is similar in appearance to that of the Moon, showing extensive mare-like plains and heavy cratering, indicating that it has been geologically inactive for billions of years. It is more heterogeneous than either Mars's or the Moon’s.",
             source: "https://en.wikipedia.org/wiki/Mercury_(planet)#Surface_geology"
         },
-        rotation: "58.6 Days",
-        revolution: "87.97 Days",
+        rotation: "58.6 DAYS",
+        revolution: "87.97 DAYS",
         radius: "2,439.7 KM",
-        temperature: "430°c",
+        temperature: "430°C",
         images: {
-            planet: "./public/assets/planet-mercury.svg",
-            internal: "../../../public/assets/planet-mercury-internal.svg",
-            geology: "../../../public/assets/geology-mercury.png"
+            planet: "../assets/planet-mercury.svg",
+            internal: "../assets/planet-mercury-internal.svg",
+            geology: "../assets/geology-mercury.png"
         }
     },
     {
@@ -43,14 +43,14 @@
                 "Much of the Venusian surface appears to have been shaped by volcanic activity. Venus has several times as many volcanoes as Earth, and it has 167 large volcanoes that are over 100 km (60 mi) across. The only volcanic complex of this size on Earth is the Big Island of Hawaii.",
             source: "https://en.wikipedia.org/wiki/Venus#Surface_geology"
         },
-        rotation: "243 Days",
-        revolution: "224.7 Days",
+        rotation: "243 DAYS",
+        revolution: "224.7 DAYS",
         radius: "6,051.8 KM",
-        temperature: "471°c",
+        temperature: "471°C",
         images: {
-            planet: "./assets/planet-venus.svg",
-            internal: "./assets/planet-venus-internal.svg",
-            geology: "./assets/geology-venus.png"
+            planet: "../assets/planet-venus.svg",
+            internal: "../assets/planet-venus-internal.svg",
+            geology: "../assets/geology-venus.png"
         }
     },
     {
@@ -70,14 +70,14 @@
                 "The total surface area of Earth is about 510 million km2. The continental crust consists of lower density material such as the igneous rocks granite and andesite. Less common is basalt, a denser volcanic rock that is the primary constituent of the ocean floors.",
             source: "https://en.wikipedia.org/wiki/Earth#Surface"
         },
-        rotation: "0.99 Days",
-        revolution: "365.26 Days",
+        rotation: "0.99 DAYS",
+        revolution: "365.26 DAYS",
         radius: "6,371 KM",
-        temperature: "16°c",
+        temperature: "16°C",
         images: {
-            planet: "./assets/planet-earth.svg",
-            internal: "./assets/planet-earth-internal.svg",
-            geology: "./assets/geology-earth.png"
+            planet: "../assets/planet-earth.svg",
+            internal: "../assets/planet-earth-internal.svg",
+            geology: "../assets/geology-earth.png"
         }
     },
     {
@@ -97,14 +97,14 @@
                 "Mars is a terrestrial planet whose surface consists of minerals containing silicon and oxygen, metals, and other elements that typically make up rock. The surface is primarily composed of tholeiitic basalt, although parts are more silica-rich than typical basalt.",
             source: "https://en.wikipedia.org/wiki/Mars#Surface_geology"
         },
-        rotation: "1.03 Days",
-        revolution: "1.88 Years",
+        rotation: "1.03 DAYS",
+        revolution: "1.88 YEARS",
         radius: "3,389.5 KM",
-        temperature: "-28°c",
+        temperature: "-28°C",
         images: {
-            planet: "./assets/planet-mars.svg",
-            internal: "./assets/planet-mars-internal.svg",
-            geology: "./assets/geology-mars.png"
+            planet: "../assets/planet-mars.svg",
+            internal: "../assets/planet-mars-internal.svg",
+            geology: "../assets/geology-mars.png"
         }
     },
     {
@@ -124,14 +124,14 @@
                 "The best known feature of Jupiter is the Great Red Spot, a persistent anticyclonic storm located 22° south of the equator. It is known to have existed since at least 1831, and possibly since 1665.",
             source: "https://en.wikipedia.org/wiki/Jupiter#Great_Red_Spot_and_other_vortices"
         },
-        rotation: "9.93 Hours",
-        revolution: "11.86 Years",
+        rotation: "9.93 HOURS",
+        revolution: "11.86 YEARS",
         radius: "69,911 KM",
-        temperature: "-108°c",
+        temperature: "-108°C",
         images: {
-            planet: "./assets/planet-jupiter.svg",
-            internal: "./assets/planet-jupiter-internal.svg",
-            geology: "./assets/geology-jupiter.png"
+            planet: "../assets/planet-jupiter.svg",
+            internal: "../assets/planet-jupiter-internal.svg",
+            geology: "../assets/geology-jupiter.png"
         }
     },
     {
@@ -151,14 +151,14 @@
                 "The outer atmosphere of Saturn contains 96.3% molecular hydrogen and 3.25% helium by volume. The planet's most famous feature is its prominent ring system, which is composed mostly of ice particles with a smaller amount of rocky debris and dust.",
             source: "https://en.wikipedia.org/wiki/Saturn#Atmosphere"
         },
-        rotation: "10.8 Hours",
-        revolution: "29.46 Years",
+        rotation: "10.8 HOURS",
+        revolution: "29.46 YEARS",
         radius: "58,232 KM",
-        temperature: "-138°c",
+        temperature: "-138°C",
         images: {
-            planet: "./assets/planet-saturn.svg",
-            internal: "./assets/planet-saturn-internal.svg",
-            geology: "./assets/geology-saturn.png"
+            planet: "../assets/planet-saturn.svg",
+            internal: "../assets/planet-saturn-internal.svg",
+            geology: "../assets/geology-saturn.png"
         }
     },
     {
@@ -178,14 +178,14 @@
                 "The composition of Uranus's atmosphere is different from its bulk, consisting mainly of molecular hydrogen and helium. The helium molar fraction, i.e. the number of helium atoms per molecule of gas, is 0.15±0.03 in the upper troposphere.",
             source: "https://en.wikipedia.org/wiki/Uranus#Atmosphere"
         },
-        rotation: "17.2 Hours",
-        revolution: "84 Years",
+        rotation: "17.2 HOURS",
+        revolution: "84 YEARS",
         radius: "25,362 KM",
-        temperature: "-195°c",
+        temperature: "-195°C",
         images: {
-            planet: "./assets/planet-uranus.svg",
-            internal: "./assets/planet-uranus-internal.svg",
-            geology: "./assets/geology-uranus.png"
+            planet: "../assets/planet-uranus.svg",
+            internal: "../assets/planet-uranus-internal.svg",
+            geology: "../assets/geology-uranus.png"
         }
     },
     {
@@ -205,14 +205,14 @@
                 "Neptune's atmosphere is 80% hydrogen and 19% helium. A trace amount of methane is also present. Prominent absorption bands of methane exist at wavelengths above 600 nm, in the red and infrared portion of the spectrum.",
             source: "https://en.wikipedia.org/wiki/Neptune#Atmosphere"
         },
-        rotation: "16.08 Hours",
-        revolution: "164.79 Years",
+        rotation: "16.08 HOURS",
+        revolution: "164.79 YEARS",
         radius: "24,622 KM",
-        temperature: "-201°c",
+        temperature: "-201°C",
         images: {
-            planet: "./assets/planet-neptune.svg",
-            internal: "./assets/planet-neptune-internal.svg",
-            geology: "./assets/geology-neptune.png"
+            planet: "../assets/planet-neptune.svg",
+            internal: "../assets/planet-neptune-internal.svg",
+            geology: "../assets/geology-neptune.png"
         }
     }
 ];

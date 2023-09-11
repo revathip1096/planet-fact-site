@@ -10,7 +10,7 @@ const Navbar = () => {
     <div>
   
    <nav className="bg-white border-gray-200 dark:bg-gray-900 ">
-  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
+  <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6 ">
     <a href="/" className="flex items-center">
       
       <span className="content-between self-center text-2xl whitespace-nowrap dark:text-white ml-[-70px] font-[antonio]

@@ -1,4 +1,5 @@
 "use client"
+
 import React from "react";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
 import Image from "next/image";
@@ -27,7 +28,7 @@ const Planet = ({ params }) => {
         </div>
         <div className="w-3/12 p-4 mt-20 mr-20">
           {/* Content for the right column */}
-          <h2 className="text-3xl font-semibold mb-4">{planetData.name}</h2>
+          <h2 className="text-3xl font-semibold mb-4">{planetData.name.toUpperCase()}</h2>
           {planetData.overview.content}
           <div className="flex text-l font-semibold mt-4">
             <h3 className=" ">Source:</h3>
@@ -36,7 +37,7 @@ const Planet = ({ params }) => {
                 href={planetData.overview.source}
                 className="underline ml-2"
                 target="_blank"
-                rel="noopener noreferrer"
+                
               >
                 Wikipedia
               </a>
@@ -44,21 +45,21 @@ const Planet = ({ params }) => {
             </div>
           </div>
           <div className="flex flex-col">
-          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-4 rounded-xl hover:bg-gray-400 mt-[40px]">
-            OVERVIEW
+          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-6 hover:bg-gray-400 mt-[70px] text-left">
+           01 &nbsp;&nbsp;OVERVIEW
           </button>
-          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-4 rounded-xl hover:bg-gray-400 mt-[10px]">
-            INTERNAL STRUCTURE
+          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-6  hover:bg-gray-400 mt-[10px] text-left">
+           02 &nbsp;&nbsp;INTERNAL STRUCTURE
           </button>
-          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-4 rounded-xl hover:bg-gray-400 mt-[10px]">
-            SURFACE GEOLOGY
+          <button className=" bg-[#419DB9] text-[#ffffff] font-bold py-2 px-6  hover:bg-gray-400 mt-[10px] text-left">
+           03 &nbsp;&nbsp;SURFACE GEOLOGY
           </button>
         </div>
         </div>
       </div>
-      <div className="flex justify-center gap-10 mt-[50px]  ">
+      <div className="flex justify-center gap-10 mt-[70px]  ">
         {/* Render other planet data here */}
-        <span className="block max-w-sm p-8 px-[64px] border border-white-200">
+        <span className="block max-w-sm p-8 px-[60px] border border-white-200">
           <h5 className="font-normal text-gray-700 dark:text-gray-400">
             ROTATION TIME
           </h5>
@@ -66,7 +67,7 @@ const Planet = ({ params }) => {
             {planetData.rotation}
           </p>
         </span>
-        <span className="block max-w-sm p-8 px-[64px] border border-white-200">
+        <span className="block max-w-sm p-8 px-[60px] border border-white-200">
           <h5 className="font-normal text-gray-700 dark:text-gray-400">
             REVOLUTION TIME
           </h5>
@@ -74,7 +75,7 @@ const Planet = ({ params }) => {
             {planetData.revolution}
           </p>
         </span>
-        <span className="block max-w-sm p-8 px-[64px] border border-white-200">
+        <span className="block max-w-sm p-8 px-[60px] border border-white-200">
           <h5 className="font-normal text-gray-700 dark:text-gray-400">
             RADIUS
           </h5>
@@ -82,7 +83,7 @@ const Planet = ({ params }) => {
             {planetData.radius}
           </p>
         </span>
-        <span className="block max-w-sm p-8 px-[64px] border border-white-200">
+        <span className="block max-w-sm p-8 px-[60px] border border-white-200">
           <h5 className="font-normal text-gray-700 dark:text-gray-400">
             AVERAGE TEMP.
           </h5>

@@ -9,7 +9,7 @@ const Planet = () => {
       <div className="flex">
         <div className="w-9/12 flex justify-center items-center">
           {/* Content for the left column */}
-          <img src="/assets/planet-mercury.svg" alt="Mercury" />
+          <img src="./assets/geology-mercury.png" alt="Mercury" />
         </div>
         <div className="w-3/12 p-4 mt-20 mr-20">
           {/* Content for the right column */}

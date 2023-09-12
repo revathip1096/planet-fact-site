@@ -1,4 +1,5 @@
 "use client"
+
 import React, { useState } from 'react';
 import Link from 'next/link';
 
@@ -115,7 +116,7 @@ const Navbar = () => {
                   NEPTUNE
                 </Link>
               </li>
-              {/* Add links to the other planets here */}
+         
             </ul>
           </div>
         </div>

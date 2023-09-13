@@ -35,11 +35,11 @@ const Planet = ({ params }) => {
   const getSectionImage = () => {
     switch (activeSection) {
       case "overview":
-        return planetData.images.planet;
+        return [planetData.images.planet];
       case "structure":
-        return planetData.images.internal;
+        return [planetData.images.internal];
       case "geology":
-        return planetData.images.geology;
+        return [planetData.images.planet, planetData.images.geology];
       default:
         return ""; // Handle the case when an invalid section is selected
     }
@@ -50,17 +50,19 @@ const Planet = ({ params }) => {
       <Navbar />
 
       <div className="p-4 lg:py-20 lg:px-20 lg:flex">
-        <div className="lg:w-9/12 lg:flex lg:justify-center lg:items-center">
+        <div className={`${getSectionImage().length === 1 ? "" : "relative flex justify-center mb-32"} lg:w-9/12 lg:flex lg:justify-center lg:items-center`}>
           {/* Content for the left column */}
-          <img
-            src={getSectionImage()}
+          {getSectionImage().map((image, index) => <img
+          key={index}
+            src={image}
             alt={planetData.name}
-            className="max-w-full h-auto mt-4 lg:mt-8"
-          />
+            className={`${getSectionImage().length === 1 ? "" : index === 1 ? "absolute top-[48%] max-w-[50%] md:max-w-[20%] lg:max-w-[163px]" : ""} max-w-full h-auto mt-24 lg:mt-8`}
+          />)}
+          
         </div>
         <div className="lg:w-3/12 lg:p-4 lg:mt-20 lg:mr-20">
           {/* Content for the right column */}
-          <h2 className="text-3xl font-semibold mb-4">
+          <h2 className="text-5xl font-semibold mb-4">
             {planetData.name.toUpperCase()}
           </h2>
           {getSectionContent()}
@@ -83,7 +85,7 @@ const Planet = ({ params }) => {
                 backgroundColor:
                   activeSection === "overview" ? color : "transparent",
               }}
-              className={` text-[#ffffff] font-bold py-2 px-6 hover:bg-cyan-400 mt-[70px] text-left`}
+              className={` text-[#ffffff] font-bold py-2 px-6 hover:bg-gray-400 mt-[70px] text-left  border border-white-200`}
               onClick={() => handleSectionChange("overview")}
             >
               01 &nbsp;&nbsp;OVERVIEW
@@ -93,7 +95,7 @@ const Planet = ({ params }) => {
                 backgroundColor:
                   activeSection === "structure" ? color : "transparent",
               }}
-              className={` text-[#ffffff] font-bold py-2 px-6 hover:bg-gray-400 mt-[10px] text-left`}
+              className={` text-[#ffffff] font-bold py-2 px-6 hover:bg-gray-400 mt-[10px] text-left border border-white-200`}
               onClick={() => handleSectionChange("structure")}
             >
               02 &nbsp;&nbsp;INTERNAL STRUCTURE
@@ -103,7 +105,7 @@ const Planet = ({ params }) => {
                 backgroundColor:
                   activeSection === "geology" ? color : "transparent",
               }}
-              className={` text-[#ffffff] font-bold py-2 px-6 hover:bg-gray-400 mt-[10px] text-left`}
+              className={` text-[#ffffff] font-bold py-2 px-6 hover:bg-gray-400 mt-[10px] text-left border border-white-200`}
               onClick={() => handleSectionChange("geology")}
             >
               03 &nbsp;&nbsp;SURFACE GEOLOGY

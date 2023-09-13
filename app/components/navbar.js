@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
+import React, { useState } from "react";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +15,7 @@ const Navbar = () => {
       <nav className="bg-white border-gray-200 dark:bg-gray-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl whitespace-nowrap dark:text-white font-[antonio] font-bold text-2xl/4">
+            <span className="text-2xl whitespace-nowrap dark:text-white font-bold text-2xl/4">
               THE PLANETS
             </span>
           </Link>
@@ -29,7 +29,7 @@ const Navbar = () => {
           >
             <span className="sr-only">Open main menu</span>
             <svg
-              className={`w-5 h-5 ${isMenuOpen ? 'hidden' : 'block'}`}
+              className={`w-5 h-5 ${isMenuOpen ? "hidden" : "block"}`}
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -46,7 +46,7 @@ const Navbar = () => {
           </button>
           <div
             className={`w-full md:flex md:w-auto ${
-              isMenuOpen ? 'block' : 'hidden'
+              isMenuOpen ? "block" : "hidden"
             }`}
             id="navbar-default"
           >
@@ -116,7 +116,6 @@ const Navbar = () => {
                   NEPTUNE
                 </Link>
               </li>
-         
             </ul>
           </div>
         </div>

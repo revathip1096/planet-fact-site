@@ -50,68 +50,68 @@ const Navbar = () => {
             }`}
             id="navbar-default"
           >
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li>
+            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#419db9]">
                 <Link
                   href="/planets/mercury"
                   className="block py-2 pl-3 pr-4 text-blue-700 rounded md:text-white md:bg-transparent md:p-0 font-family-[spartan] font-weight-700"
                 >
                   MERCURY
                 </Link>
-                <span className="before:block before:h-[2px] before:w-[100%] before:bg-white before:absolute before:left-0 before:opacity-0 before:transition-all before:duration-[0.2s] hover:before:opacity-1"></span>
               </li>
-              <li>
+
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#eda44a]">
                 <Link
                   href="/planets/venus"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white "
                 >
                   VENUS
                 </Link>
               </li>
-              <li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#6f2ed6]">
                 <Link
                   href="/planets/earth"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
                 >
                   EARTH
                 </Link>
               </li>
-              <li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#d14e33]">
                 <Link
                   href="/planets/mars"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
                 >
                   MARS
                 </Link>
               </li>
-              <li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#d93b36]">
                 <Link
                   href="/planets/jupiter"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
                 >
                   JUPITER
                 </Link>
               </li>
-              <li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#cb5020]">
                 <Link
                   href="/planets/saturn"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
                 >
                   SATURN
                 </Link>
               </li>
-              <li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#1ec2a4]">
                 <Link
                   href="/planets/uranus"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
                 >
                   URANUS
                 </Link>
               </li>
-              <li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#2d68f0]">
                 <Link
                   href="/planets/neptune"
-                  className="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:text-white md:bg-transparent md:p-0 dark:text-white dark:hover:bg-gray-700"
+                  className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
                 >
                   NEPTUNE
                 </Link>

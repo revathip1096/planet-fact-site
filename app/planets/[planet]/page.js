@@ -1,14 +1,17 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaExternalLinkSquareAlt } from "react-icons/fa";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import data from "../../../public/data";
 import Navbar from "../../../app/components/navbar";
 
 const Planet = ({ params }) => {
   const [activeSection, setActiveSection] = useState("overview");
+  const [prevSection, setPrevSection] = useState("overview");
 
   const handleSectionChange = (section) => {
+    setPrevSection(activeSection);
     setActiveSection(section);
   };
 
@@ -28,37 +31,75 @@ const Planet = ({ params }) => {
       case "geology":
         return planetData.geology.content;
       default:
-        return ""; // Handle the case when an invalid section is selected
+        return "";
     }
   };
 
   const getSectionImage = () => {
     switch (activeSection) {
       case "overview":
-        return [planetData.images.planet];
+        return planetData.images.planet;
       case "structure":
-        return [planetData.images.internal];
+        return planetData.images.internal;
       case "geology":
-        return [planetData.images.planet, planetData.images.geology];
+        return planetData.images.geology;
       default:
-        return ""; // Handle the case when an invalid section is selected
+        return "";
     }
   };
+
+  const slideVariants = {
+    enter: {
+      opacity: 0,
+      x: ((prevSection=="geology"|| prevSection =="structure") && (activeSection =="structure"||activeSection=="overview"))?-100:100,
+    },
+    center: {
+      opacity: 1,
+      x: 0,
+    },
+    exit: {
+      opacity: 0,
+      x: ((prevSection=="geology"|| prevSection =="structure") && (activeSection =="structure"||activeSection=="overview"))?100:-100,
+      transition: { duration: 0.2, ease: "easeOut" },
+    },
+  };
+  
+
+
+  
+
+  useEffect(() => {
+    // Update the animation direction when activeSection changes
+    setPrevSection(activeSection);
+    console.log(activeSection);
+    console.log(prevSection);
+  }, [activeSection]);
 
   return (
     <>
       <Navbar />
 
       <div className="p-4 lg:py-20 lg:px-20 lg:flex">
-        <div className={`${getSectionImage().length === 1 ? "" : "relative flex justify-center mb-32"} lg:w-9/12 lg:flex lg:justify-center lg:items-center`}>
+        <div className={`${getSectionImage() ? "relative flex justify-center mb-32" : ""} lg:w-9/12 lg:flex lg:justify-center lg:items-center`}>
           {/* Content for the left column */}
-          {getSectionImage().map((image, index) => <img
-          key={index}
-            src={image}
-            alt={planetData.name}
-            className={`${getSectionImage().length === 1 ? "" : index === 1 ? "absolute top-[48%] max-w-[50%] md:max-w-[20%] lg:max-w-[163px]" : ""} max-w-full h-auto mt-24 lg:mt-8`}
-          />)}
-          
+          <AnimatePresence initial={false}>
+            <div style={{ overflow: "hidden" }}>
+              <motion.div
+                key={activeSection}
+                className={`${getSectionImage() ? "" : "absolute top-[48%] max-w-[50%] md:max-w-[20%] lg:max-w-[163px]"} max-w-full h-auto mt-24 lg:mt-8`}
+                variants={slideVariants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+              >
+                <img
+                  src={getSectionImage()}
+                  alt={planetData.name}
+                  className="w-full h-auto"
+                />
+              </motion.div>
+            </div>
+          </AnimatePresence>
         </div>
         <div className="lg:w-3/12 lg:p-4 lg:mt-20 lg:mr-20">
           {/* Content for the right column */}

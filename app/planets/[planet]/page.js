@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import data from "../../../public/data";
 import Navbar from "../../../app/components/navbar";
+import auth from "../../firebase";
+import { useRouter } from "next/navigation";
+
 
 const Planet = ({ params }) => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -14,6 +17,17 @@ const Planet = ({ params }) => {
     setPrevSection(activeSection);
     setActiveSection(section);
   };
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user");
+    setUser(storedUser);
+  
+    if (storedUser === "null" || storedUser === null) {
+      router.push("/");
+    }
+  }, [router]);
+  
 
   const planetData = data.find((planet) => planet.name === params.planet);
   const { color } = planetData;
@@ -38,11 +52,11 @@ const Planet = ({ params }) => {
   const getSectionImage = () => {
     switch (activeSection) {
       case "overview":
-        return planetData.images.planet;
+        return [planetData.images.planet];
       case "structure":
-        return planetData.images.internal;
+        return [planetData.images.internal];
       case "geology":
-        return planetData.images.geology;
+        return [ planetData.images.geology];
       default:
         return "";
     }
@@ -101,6 +115,7 @@ const Planet = ({ params }) => {
             </div>
           </AnimatePresence>
         </div>
+        
         <div className="lg:w-3/12 lg:p-4 lg:mt-20 lg:mr-20">
           {/* Content for the right column */}
           <h2 className="text-5xl font-semibold mb-4">

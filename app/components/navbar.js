@@ -1,14 +1,32 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import Link from "next/link";
+import { signOut } from "firebase/auth";
+import { useRouter } from "next/navigation";
+import auth from "../firebase"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+  const [user, setUser] = useState(null);
+  const router = useRouter();
+  useEffect(() => {
+    console.log(typeof user);
+    const storedUser = localStorage.getItem("user");
+    setUser(storedUser);
+  
+    if (storedUser === "null" || storedUser === null || storedUser==="undefined") {
+      router.push("/");
+    }
+  }, [router]);
+  const signout=()=>{
+    signOut(auth);
+    localStorage.removeItem("user");
+    router.push('/');
+  }
 
   return (
     <div className="fixed top-0 w-full z-10">
@@ -115,6 +133,14 @@ const Navbar = () => {
                 >
                   NEPTUNE
                 </Link>
+              </li>
+              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full ">
+                <button
+                  onClick={signout}
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mt-[-10px]"
+                >
+                  Sign Out
+                </button>
               </li>
             </ul>
           </div>

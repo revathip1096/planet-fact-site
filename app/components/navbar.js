@@ -5,6 +5,7 @@ import Link from "next/link";
 import { signOut } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import auth from "../firebase"
+import {FaGithub} from "react-icons/fa6"
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -30,10 +31,10 @@ const Navbar = () => {
 
   return (
     <div className="fixed top-0 w-full z-10">
-      <nav className="bg-white border-gray-200 dark:bg-gray-900">
+      <nav className="bg-black border-gray-200 dark:bg-black-900">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-6">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl whitespace-nowrap dark:text-white font-bold text-2xl/4">
+            <span className="text-2xl whitespace-nowrap text-white dark:text-white font-bold text-2xl/4">
               THE PLANETS
             </span>
           </Link>
@@ -63,22 +64,22 @@ const Navbar = () => {
             </svg>
           </button>
           <div
-            className={`w-full md:flex md:w-auto ${
+            className={`w-full md:flex bg-black md:w-auto ${
               isMenuOpen ? "block" : "hidden"
             }`}
             id="navbar-default"
           >
-            <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#419db9]">
+            <ul className="bg-black dark:bg-black font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100  md:flex-row md:space-x-8 md:mt-0 md:border-0   dark:border-gray-700">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#419db9]">
                 <Link
                   href="/planets/mercury"
-                  className="block py-2 pl-3 pr-4 text-blue-700 rounded md:text-white md:bg-transparent md:p-0 font-family-[spartan] font-weight-700"
+                  className=" block py-2 pl-3 pr-4 text-blue-700 rounded md:text-white md:bg-transparent md:p-0 font-family-[spartan] font-weight-700"
                 >
                   MERCURY
                 </Link>
               </li>
 
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#eda44a]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#eda44a]">
                 <Link
                   href="/planets/venus"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white "
@@ -86,7 +87,7 @@ const Navbar = () => {
                   VENUS
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#6f2ed6]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#6f2ed6]">
                 <Link
                   href="/planets/earth"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
@@ -94,7 +95,7 @@ const Navbar = () => {
                   EARTH
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#d14e33]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#d14e33]">
                 <Link
                   href="/planets/mars"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
@@ -102,7 +103,7 @@ const Navbar = () => {
                   MARS
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#d93b36]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#d93b36]">
                 <Link
                   href="/planets/jupiter"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
@@ -110,7 +111,7 @@ const Navbar = () => {
                   JUPITER
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#cb5020]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#cb5020]">
                 <Link
                   href="/planets/saturn"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
@@ -118,7 +119,7 @@ const Navbar = () => {
                   SATURN
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#1ec2a4]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#1ec2a4]">
                 <Link
                   href="/planets/uranus"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
@@ -126,7 +127,7 @@ const Navbar = () => {
                   URANUS
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#2d68f0]">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full hover:before:bg-[#2d68f0]">
                 <Link
                   href="/planets/neptune"
                   className="block py-2 pl-3 pr-4 text-gray-900 md:text-white md:bg-transparent md:p-0 dark:text-white"
@@ -134,13 +135,16 @@ const Navbar = () => {
                   NEPTUNE
                 </Link>
               </li>
-              <li className="relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full ">
+              <li className="bg-black relative hover:before:bottom-[44px] hover:before:absolute hover:before:h-[4px] hover:before:content-[''] hover:before:w-full ">
                 <button
                   onClick={signout}
                   className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded mt-[-10px]"
                 >
                   Sign Out
                 </button>
+              </li>
+              <li className=" bg-white relative  ">
+              <Link href="https://github.com/revathip1096/planet-fact-site" ><FaGithub className="h-[23px] w-[25px] bg-white border-white rounded-full" /></Link>
               </li>
             </ul>
           </div>

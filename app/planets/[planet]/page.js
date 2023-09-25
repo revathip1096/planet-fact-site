@@ -23,7 +23,7 @@ const Planet = ({ params }) => {
     const storedUser = localStorage.getItem("user");
     setUser(storedUser);
   
-    if (storedUser === "null" || storedUser === null) {
+    if (storedUser === "null" || storedUser === null || storedUser==="undefined") {
       router.push("/");
     }
   }, [router]);
@@ -93,7 +93,7 @@ const Planet = ({ params }) => {
     <>
       <Navbar />
 
-      <div className="p-4 lg:py-20 lg:px-20 lg:flex">
+      <div className="p-4 lg:py-20 lg:px-20 lg:flex bg-black dark:bg-black">
         <div className={`${getSectionImage() ? "relative flex justify-center mb-32" : ""} lg:w-9/12 lg:flex lg:justify-center lg:items-center`}>
           {/* Content for the left column */}
           <AnimatePresence initial={false}>
@@ -116,7 +116,7 @@ const Planet = ({ params }) => {
           </AnimatePresence>
         </div>
         
-        <div className="lg:w-3/12 lg:p-4 lg:mt-20 lg:mr-20">
+        <div className="lg:w-3/12 lg:p-4 lg:mt-20 lg:mr-20 text-white ">
           {/* Content for the right column */}
           <h2 className="text-5xl font-semibold mb-4">
             {planetData.name.toUpperCase()}
@@ -169,36 +169,36 @@ const Planet = ({ params }) => {
           </div>
         </div>
       </div>
-      <div className="lg:flex lg:justify-center lg:gap-10 lg:mt-20 lg:w-sm">
+      <div className="bg-black relative bottom-0  w-full lg:flex lg:justify-center lg:gap-10 lg:w-sm ">
         <span className="block max-w-sm p-8 px-[62px] border border-white-200">
-          <h5 className="font-normal text-gray-700 dark:text-gray-400">
+          <h5 className="font-normal text-white dark:text-white">
             ROTATION TIME
           </h5>
-          <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <p className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
             {planetData.rotation}
           </p>
         </span>
         <span className="block max-w-sm p-8 px-[62px] border border-white-200">
-          <h5 className="font-normal text-gray-700 dark:text-gray-400">
+          <h5 className="font-normal text-white dark:text-white">
             REVOLUTION TIME
           </h5>
-          <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <p className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
             {planetData.revolution}
           </p>
         </span>
         <span className="block max-w-sm p-8 px-[62px] border border-white-200">
-          <h5 className="font-normal text-gray-700 dark:text-gray-400">
+          <h5 className="font-normal text-white dark:text-white">
             RADIUS
           </h5>
-          <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <p className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
             {planetData.radius}
           </p>
         </span>
         <span className="block max-w-sm p-8 px-[62px] border border-white-200">
-          <h5 className="font-normal text-gray-700 dark:text-gray-400">
+          <h5 className="font-normal text-white dark:text-white">
             AVERAGE TEMP.
           </h5>
-          <p className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          <p className="mb-2 text-2xl font-bold tracking-tight text-white dark:text-white">
             {planetData.temperature}
           </p>
         </span>
